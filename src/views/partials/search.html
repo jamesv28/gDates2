@@ -1,0 +1,74 @@
+<div class="row loadingBlock" ng-show="loading">
+    <div class="container spinner">
+        <img ng-src="../img/loading2.gif" >
+    </div>
+</div> <!-- end of loading -->
+
+<div class="row" id="searchPage">
+    <div class="container-fluid" ng-controller="searchCtrl">
+        <div class="col-md-4 memberLeft" >
+            <div class="indMember col-md-12 col-sm-12" ng-repeat="member in members.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+
+                <members-info member="member">
+
+                </members-info>
+            </div>
+            <uib-pagination template-url="views/pagination.html" max-size="5" total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination>
+        </div><!-- END OF LEFT -->
+
+        <!--<h6 >{{member.username}} </h6>-->
+        <!--<p>City:  {{member.address.city}}</p>-->
+        <div class="col-md-6 col-md-offset-1" id="searchMatters">
+            <h2 class="text-lg-center text-md-center">Search</h2>
+            <div class="line"></div>
+            <form >
+                <div class="form-group" id="searchTop" style="margin-bottom: 1rem;;">
+                    <label class="form-control-label col-md-2">Username: </label>
+                    <div class="col-md-4">
+                        <input type="text" placeholder="username" class="form-control" ng-model="username">
+                    </div>
+                    <label class="form-control-label col-md-2">Email</label>
+                    <div class="col-md-4">
+                        <input type="text" placeholder="email" ng-model="email" class="form-control">
+                    </div>
+                </div><br><br>
+                <div class="form-group" style="margin-top: 10px;">
+                    <label class="col-md-2 form-control-label">Gender</label>
+                    <div class="col-md-4">
+                        <select class="form-control">
+                            <option>--Choose Gender--</option>
+                            <option value="m">Male</option>
+                            <option value="f">Female</option>
+                        </select>
+                    </div>
+                    <label class="col-md-2 form-control-label">Age: </label>
+                    <div class="col-md-4">
+                        <select class="form-control">
+                            <option value="low">Low</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div><br><br>
+                <div class="form-group">
+                    <p>Search Type: </p>
+                </div>
+                <div class="form-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        Any of the search fields
+                    </label>&nbsp; &nbsp;
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        Every search field
+                    </label>
+
+                </div>
+                <div class="form-group col-md-offset-1">
+                    <button class="btn-warning-outline ">Search</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
