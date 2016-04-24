@@ -10,10 +10,9 @@
         getMembersService.getallMembers()
             .then(function(data) {
                 $scope.members = data.data.data;
-                console.log('members info', $scope.members[0]);
                 $scope.viewby = 8;
                 $scope.totalItems = $scope.members.length;
-                $scope.currentPage = 4;
+                $scope.currentPage = 1;
                 $scope.itemsPerPage = $scope.viewby;
                 $scope.maxSize = 5;
             }).finally(function() {
