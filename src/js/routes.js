@@ -12,6 +12,10 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: 'views/partials/members.html',
             controller: 'membersCtrl'
         })
+        .when('/register', {
+            templateUrl: 'views/partials/register.html',
+            controller: 'registerCtrl'
+        })
         .when('/search', {
             templateUrl: 'views/partials/search.html',
             controller: 'searchCtrl'
