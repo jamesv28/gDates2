@@ -30,5 +30,5 @@
             $scope.itemsPerPage = num;
             $scope.currentPage = 1; //reset to first paghe
         };
-    } // end of login controller function
+    } // end of  controller function
 })(); //end of controller
