@@ -1,33 +1,13 @@
-(function () {
+(function() {
     angular.module('myApp')
-        .controller('searchCtrl', searchCtrl);
+        .controller('userProfileCtrl',userProfileCtrl);
 
-    searchCtrl.$inject = ['$scope', 'getMembersService'];
+    userProfileCtrl.$inject = ['$scope', '$rootScope', 'authService'];
 
-    function searchCtrl($scope, getMembersService) {
-        $scope.loading = true;
-
-        getMembersService.getallMembers()
-            .then(function(data) {
-                $scope.members = data.data.data;
-                $scope.viewby = 8;
-                $scope.totalItems = $scope.members.length;
-                $scope.currentPage = 1;
-                $scope.itemsPerPage = $scope.viewby;
-                $scope.maxSize = 5;
-            }).finally(function() {
-                $scope.loading= false;
-            });
-
-
-
-        $scope.pageChanged = function() {
-            console.log('Page changed to: ' + $scope.currentPage);
-        };
-
-        $scope.setItemsPerPage = function(num) {
-            $scope.itemsPerPage = num;
-            $scope.currentPage = 1; //reset to first paghe
-        };
+    function userProfileCtrl($scope, $rootScope, authService) {
+        $rootScope.currentUser = authService.getUserInfo();
+        //try to fix issue with currentUser
+        $scope.user = JSON.parse( $rootScope.currentUser);
+        console.log('brought to the local level', $scope.user);
     }
-})();   //end of controller
+})();

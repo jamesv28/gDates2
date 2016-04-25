@@ -20,6 +20,10 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: 'views/partials/search.html',
             controller: 'searchCtrl'
         })
+        .when('/userProfile', {
+            templateUrl: '/views/partials/userProfile.html',
+            controller: 'userProfileCtrl'
+        })
         .when('/logout', {
             templateUrl: 'views/partials/logout.html',
             controller: 'logoutCtrl'
