@@ -1,3 +1,76 @@
-<h3>{{hello</h3>
-<h2>hello</h2>
-<h1>{{user.active}}</h1>
+<div class="row profileHeading">
+<div class="container-fluid">
+    <h2 class="text-md-center">Edit your Profile</h2>
+    <div class="line"></div>
+    <div class="col-md-8 col-md-offset-2">
+        <uib-tabset justified="true" template-url="views/angularUI/tabset.html" active="active">
+                <uib-tab template-url="views/angularUI/tab.html" index="0" heading="General Info">
+                   <form>
+                       <div class="form-group row">
+                           <div class="col-md-offset-1 form-control-label col-md-3">FirstName</div>
+                           <div class="col-md-6">
+                               <input class="form-control" ng-model="user.names.firstName">
+                           </div>
+                       </div>
+                       <div class="form-group row">
+                           <label class="col-md-offset-1 form-control-label col-md-3">Last Name: </label>
+                           <div class="col-md-6">
+                               <input class="form-control" ng-model="user.names.lastName">
+                           </div>
+                       </div>
+                       <div class="form-group row">
+                           <label class="col-md-offset-1 form-control-label col-md-3">Description: </label>
+                           <div class="col-md-6">
+                               <textarea class="form-control" ng-model="user.description" rows="5">
+                               </textarea>
+                           </div>
+                       </div>
+                       <div class="form-group row">
+                           <div class="col-md-4">
+                               <input type="file" class="form-control" ng-model="user.avatar">
+                           </div>
+                           <img class="img-responsive formImage" ng-src="{{user.avatar}}">
+
+                       </div>
+                   </form>
+                </uib-tab>
+                <uib-tab template-url="views/angularUI/tab.html" index="2" heading="Contact Info">
+                    <form>
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label col-md-offset-1">Street:</label>
+                            <div class="col-md-6">
+                                <input placeholder="city" class="form-control" ng-model="user.address.street">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label col-md-offset-1">City: </label>
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="user.address.city">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label col-md-offset-1">Zip Code:</label>
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="user.address.zipcode">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label col-md-offset-1">Phone</label>
+                            <div class="col-md-6">
+                                <input class="form-control" ng-model="user.phone">
+                            </div>
+                        </div>
+                    </form>
+                </uib-tab>
+                <uib-tab template-url="views/angularUI/tab.html" index="3" >
+                    <uib-tab-heading>
+                        Other
+                    </uib-tab-heading>
+                    I've got an HTML heading, and a select callback. Pretty cool!
+                </uib-tab>
+            </uib-tabset>
+        <button class="btn btn-primary-outline center-block" ng-click="update()">Edit Changes</button>
+        </div>
+    </div>
+</div>

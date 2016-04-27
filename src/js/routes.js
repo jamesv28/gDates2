@@ -21,7 +21,7 @@ app.config(function($routeProvider, $locationProvider) {
             controller: 'searchCtrl'
         })
         .when('/userProfile', {
-            templateUrl: '/views/partials/userProfile.html',
+            templateUrl: 'views/partials/userProfile.html',
             controller: 'userProfileCtrl'
         })
         .when('/logout', {

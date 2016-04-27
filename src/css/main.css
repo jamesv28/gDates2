@@ -682,3 +682,20 @@ footer {
     width: 530px;
     height: 380px;
 }
+
+.profileHeading {
+    margin-top: 100px;
+}
+
+/*.nav-tabs {*/
+    /*border-bottom: 1px solid #8c3a84;*/
+/*}*/
+
+/*.nav-tabs>li.active>a{*/
+    /*border: 1px solid #8c3a84;*/
+    /*border-bottom: transparent;*/
+/*}*/
+.formImage {
+    height: 250px;
+    width: 250px;
+}
